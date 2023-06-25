@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/gyroFramgment"
+        android:name="com.ds.kotlinflows.presentation.ui.gyro.GyroFragment"
+        android:label="fragment_gyro_framgment"
+        tools:layout="@layout/fragment_gyro_framgment" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ds.kotlinflows.presentation.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_gyroFramgment"
+            app:destination="@id/gyroFramgment" />
+        <action
+            android:id="@+id/action_homeFragment_to_userSearchFragment"
+            app:destination="@id/userSearchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userSearchFragment"
+        android:name="com.ds.kotlinflows.presentation.ui.user_search.UserSearchFragment"
+        android:label="fragment_user_search"
+        tools:layout="@layout/fragment_text_search" />
+</navigation>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name" translatable="false">KotlinFlows</string>
+    <string name="start" translatable="false">start</string>
+    <string name="stop" translatable="false">stop</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="gyro">GYRO</string>
+    <string name="users">USERS</string>
+    <string name="text_search_query">user search query</string>
+</resources>
