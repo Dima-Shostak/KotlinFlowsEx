@@ -7,5 +7,5 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 class GyroFlowViewModel(gyroSensorRepository: GyroSensorRepository) : ViewModel() {
 	val gyroSensor = gyroSensorRepository
 		.gyroSensorRotationFlow
-		.distinctUntilChanged()
+//		.distinctUntilChanged()
 }

@@ -63,8 +63,8 @@ class UserSearchFragment : Fragment() {
 	}
 
 	override fun onDestroy() {
-		_binding = null
 		super.onDestroy()
+		_binding = null
 	}
 
 	companion object {
