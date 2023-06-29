@@ -5,9 +5,9 @@ import com.ds.kotlinflows.domain.user_search.UserRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class UserRepositoryImpl(private val userApi: UserApi) : UserRepository {
+class UserRepositoryFlowImpl(private val userApi: UserApi) : UserRepository<Flow<List<UserItem>>> {
 
-	override fun searchUsers(query: String): Flow<List<UserItem>> {
+	override suspend fun searchUsers(query: String): Flow<List<UserItem>> {
 		return flow {
 			emit(userApi.searchQuery(query))
 		}

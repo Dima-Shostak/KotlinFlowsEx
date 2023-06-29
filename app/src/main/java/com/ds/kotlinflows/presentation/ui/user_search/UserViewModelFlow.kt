@@ -2,9 +2,11 @@ package com.ds.kotlinflows.presentation.ui.user_search
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
+import com.ds.kotlinflows.domain.user_search.UserItem
 import com.ds.kotlinflows.domain.user_search.UserRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
@@ -12,7 +14,7 @@ import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flatMapLatest
 
-class UserViewModel(private val repository: UserRepository) : ViewModel() {
+class UserViewModelFlow(private val repository: UserRepository<Flow<List<UserItem>>>) : ViewModel() {
 
 	private val _searchQuery = MutableStateFlow("")
 	private val searchQuery: StateFlow<String> get() = _searchQuery

@@ -38,7 +38,6 @@ android {
 }
 
 dependencies {
-	val nav_version = "2.6.0"
 	// Kotlin
 	implementation(libs.androidx.navigation.fragment.ktx)
 	implementation(libs.androidx.navigation.ui.ktx)
@@ -50,7 +49,7 @@ dependencies {
 	implementation(libs.koin.android)
 	implementation(libs.androidx.lifecycle.livedata.ktx)
 	implementation(libs.timber)
-	debugImplementation(libs.leakcanary.android)
+//	debugImplementation(libs.leakcanary.android)
 
 	testImplementation(libs.junit)
 	androidTestImplementation(libs.androidx.test.ext.junit)

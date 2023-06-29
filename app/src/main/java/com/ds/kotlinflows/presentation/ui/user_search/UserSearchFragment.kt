@@ -18,7 +18,7 @@ class UserSearchFragment : Fragment() {
 	private val binding: FragmentTextSearchBinding
 		get() = _binding!!
 
-	private val viewModel: UserViewModel by viewModel()
+	private val viewModel: UserViewModelLiveData by viewModel()
 	private lateinit var userAdapter: UserAdapter
 
 	override fun onCreateView(

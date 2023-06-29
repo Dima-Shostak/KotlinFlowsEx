@@ -2,7 +2,9 @@ package com.ds.kotlinflows.data.user_search
 
 import android.content.Context
 import com.ds.kotlinflows.domain.user_search.UserItem
+import kotlinx.coroutines.delay
 import org.json.JSONObject
+import kotlin.random.Random
 
 class UserApi(context: Context) {
 
@@ -26,11 +28,14 @@ class UserApi(context: Context) {
 		return resultMap.map { UserItem(name = it.key, email = it.value) }
 	}
 
-	fun searchQuery(query: String): List<UserItem> {
+	suspend fun searchQuery(query: String): List<UserItem> {
 		if (query.isBlank()) {
 			return emptyList()
 		}
-		
+
+		val randomServerDelay = Random.nextInt(100, 1_000 + 1).toLong()
+		delay(randomServerDelay)
+
 		return usersMap
 			.asSequence()
 			.filter { it.name.contains(query) || it.email.contains(query) }
